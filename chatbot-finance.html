@@ -10,6 +10,7 @@
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f9;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -22,6 +23,22 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             width: 300px;
+        }
+         h3 {
+            color: #555;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
         }
 
         h2 {
@@ -75,7 +92,9 @@
     By <a href="https://updev-solutions.com" target="_blank" rel="noopener noreferrer">Updev Solutions</a>
 </div>
 </div>
-    <div id="loginContainer">
+
+
+ <div id="loginContainer">
         <h2>Login</h2>
         <form id="loginForm">
             <label for="username">Username:</label>
@@ -85,10 +104,16 @@
             <button type="submit">Login</button>
         </form>
     </div>
-    <div id="chatContainer">
-        <h1>My chat</h1>
-        <ideal-chat token="bf29e0f8-5bf6-4364-84af-394b4fd63501"></ideal-chat>
+  <div id="chatContainer">
+        <h1>Explore Our Chatbot</h1>
+      <div style="margin-bottom: 20px;">
+    By <a href="https://updev-solutions.com" target="_blank" rel="noopener noreferrer">Updev Solutions</a>
+</div>
+        <h2>Try the chatbot by clicking the icon at the bottom right corner of your screen:</h2>
+        
+          <ideal-chat token="bf29e0f8-5bf6-4364-84af-394b4fd63501"></ideal-chat>
     </div>
+
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -98,6 +123,7 @@
 
             if (username === 'admin' && password === 'admin') {
                 document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('title').style.display = 'none';
                 document.getElementById('chatContainer').style.display = 'block';
             } else {
                 alert('Invalid username or password!');
